@@ -1,55 +1,31 @@
 package org.sanchez.pixup.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Entity
+@Table(name = "TBL_USUARIO")
 public class Usuario extends Catalogo {
+
+    @Column(name = "NOMBRE", nullable = false)
     private String nombre;
+
+    @Column(name = "PRIMER_APELLIDO", nullable = false)
     private String primerApellido;
+
+    @Column(name = "SEGUNDO_APELLIDO")
     private String segundoApellido;
+
+    @Column(name = "PASSWORD", nullable = false)
     private String password;
+
+    @Column(name = "EMAIL", nullable = false, unique = true)
     private String email;
-
-    public Usuario() {
-        super();
-    }
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public String getPrimerApellido() {
-        return primerApellido;
-    }
-    public void setPrimerApellido(String primerApellido) {
-        this.primerApellido = primerApellido;
-    }
-    public String getSegundoApellido() {
-        return segundoApellido;
-    }
-    public void setSegundoApellido(String segundoApellido) {
-        this.segundoApellido = segundoApellido;
-    }
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "nombre='" + nombre + '\'' +
-                ", primerApellido='" + primerApellido + '\'' +
-                ", segundoApellido='" + segundoApellido + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", id=" + id +
-                '}';
-    }
 }

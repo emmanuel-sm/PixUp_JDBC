@@ -1,55 +1,31 @@
 package org.sanchez.pixup.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Entity
+@Table(name = "TBL_DOMICILIO")
 public class Domicilio extends Catalogo {
+
+    @Column(name = "CALLE", nullable = false)
     private String calle;
+
+    @Column(name = "NUM_EXTERIOR", nullable = false)
     private String numExterior;
+
+    @Column(name = "NUM_INTERIOR")
     private String numInterior;
+
+    @Column(name = "TBL_COLONIA_ID", nullable = false)
     private Integer coloniaId;
+
+    @Column(name = "TBL_USUARIO_ID", nullable = false)
     private Integer usuarioId;
-
-    public Domicilio() {
-        super();
-    }
-    public String getCalle() {
-        return calle;
-    }
-    public void setCalle(String calle) {
-        this.calle = calle;
-    }
-    public String getNumExterior() {
-        return numExterior;
-    }
-    public void setNumExterior(String numExterior) {
-        this.numExterior = numExterior;
-    }
-    public String getNumInterior() {
-        return numInterior;
-    }
-    public void setNumInterior(String numInterior) {
-        this.numInterior = numInterior;
-    }
-    public Integer getColoniaId() {
-        return coloniaId;
-    }
-    public void setColoniaId(Integer coloniaId) {
-        this.coloniaId = coloniaId;
-    }
-    public Integer getUsuarioId() {
-        return usuarioId;
-    }
-    public void setUsuarioId(Integer usuarioId) {
-        this.usuarioId = usuarioId;
-    }
-
-    @Override
-    public String toString() {
-        return "Domicilio{" +
-                "calle='" + calle + '\'' +
-                ", numExterior='" + numExterior + '\'' +
-                ", numInterior='" + numInterior + '\'' +
-                ", coloniaId=" + coloniaId +
-                ", usuarioId=" + usuarioId +
-                ", id=" + id +
-                '}';
-    }
 }

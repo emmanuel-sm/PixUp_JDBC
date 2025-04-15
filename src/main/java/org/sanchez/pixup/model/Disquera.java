@@ -1,23 +1,19 @@
 package org.sanchez.pixup.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Entity
+@Table(name = "TBL_DISQUERA")
 public class Disquera extends Catalogo {
+
+    @Column(name = "NOMBRE", nullable = false)
     private String nombre;
-
-    public Disquera() {
-        super();
-    }
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    @Override
-    public String toString() {
-        return "Disquera{" +
-                "nombre='" + nombre + '\'' +
-                ", id=" + id +
-                '}';
-    }
 }

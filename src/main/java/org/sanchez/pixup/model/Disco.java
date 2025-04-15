@@ -1,80 +1,40 @@
 package org.sanchez.pixup.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Entity
+@Table(name = "TBL_DISCO")
 public class Disco extends Catalogo {
+
+    @Column(name = "TITULO", nullable = false)
     private String titulo;
+
+    @Column(name = "PRECIO", nullable = false)
     private Float precio;
+
+    @Column(name = "EXISTENCIA", nullable = false)
     private Integer existencia;
+
+    @Column(name = "DESCUENTO")
     private Float descuento;
+
+    @Column(name = "FECHA_LANZAMIENTO")
     private String fechaLanzamiento;
+
+    @Column(name = "IMAGEN")
     private String imagen;
+
+    @Column(name = "TBL_ARTISTA_ID", nullable = false)
     private Integer artistaId;
+
+    @Column(name = "TBL_DISQUERA_ID", nullable = false)
     private Integer disqueraId;
-
-    public Disco() {
-        super();
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public Float getPrecio() {
-        return precio;
-    }
-    public void setPrecio(Float precio) {
-        this.precio = precio;
-    }
-    public Integer getExistencia() {
-        return existencia;
-    }
-    public void setExistencia(Integer existencia) {
-        this.existencia = existencia;
-    }
-    public Float getDescuento() {
-        return descuento;
-    }
-    public void setDescuento(Float descuento) {
-        this.descuento = descuento;
-    }
-    public String getFechaLanzamiento() {
-        return fechaLanzamiento;
-    }
-    public void setFechaLanzamiento(String fechaLanzamiento) {
-        this.fechaLanzamiento = fechaLanzamiento;
-    }
-    public String getImagen() {
-        return imagen;
-    }
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-    public Integer getArtistaId() {
-        return artistaId;
-    }
-    public void setArtistaId(Integer artistaId) {
-        this.artistaId = artistaId;
-    }
-    public Integer getDisqueraId() {
-        return disqueraId;
-    }
-    public void setDisqueraId(Integer disqueraId) {
-        this.disqueraId = disqueraId;
-    }
-
-    @Override
-    public String toString() {
-        return "Disco{" +
-                "titulo='" + titulo + '\'' +
-                ", precio=" + precio +
-                ", existencia=" + existencia +
-                ", descuento=" + descuento +
-                ", fechaLanzamiento='" + fechaLanzamiento + '\'' +
-                ", imagen='" + imagen + '\'' +
-                ", artistaId=" + artistaId +
-                ", disqueraId=" + disqueraId +
-                ", id=" + id +
-                '}';
-    }
 }
